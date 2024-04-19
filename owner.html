@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Management Dashboard</title>
+    <link rel="stylesheet" href="owner.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <h1>Property Management Dashboard</h1>
+    <button onclick="toggleForm()">Add New Property</button>
+    <div id="property-form" style="display:none;">
+        <input type="text" id="property-name" placeholder="Property Name" required>
+        <input type="text" id="location" placeholder="Location" required>
+        <textarea id="description" placeholder="Description" required></textarea>
+        <select id="availability">
+            <option value="Available">Available</option>
+            <option value="Not Available">Not Available</option>
+        </select>
+        <input type="file" id="file-input" multiple accept="image/*" onchange="previewFiles()">
+        <div id="image-preview"></div>
+        <button onclick="addProperty()">Submit Property</button>
+        <button onclick="resetForm()">Cancel</button>
+    </div>
+    <ul id="properties"></ul>
+    <script src="owner.js"></script>
+</body>
+</html>
